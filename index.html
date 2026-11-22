@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cahaya | Soy candles, handmade by Alice</title>
+  <meta name="description" content="Hand-poured soy candles made in North Yorkshire. Every candle helps Alice raise funds towards her school expedition to Borneo in 2029.">
+  <meta name="theme-color" content="#1B2A4A">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 64' fill='none' stroke='%23C98A1B' stroke-width='6' stroke-linecap='round'%3E%3Cpath d='M38 60 A22 22 0 0 1 82 60'/%3E%3Cpath d='M4 60 H116'/%3E%3Cpath d='M86 45 L98.1 38'/%3E%3Cpath d='M75 34 L82 21.9'/%3E%3Cpath d='M60 30 V16'/%3E%3Cpath d='M45 34 L38 21.9'/%3E%3Cpath d='M34 45 L21.9 38'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ---------- Brand ---------- */
+    :root {
+      --navy: #1B2A4A;
+      --gold-on-navy: #E9B44C;
+      --gold-on-white: #C98A1B;
+      --white: #FFFFFF;
+      --pale: #F2F4F8;
+      --text-2: #4A5568;
+      --text-2-navy: #C9D0DE;
+      --border: #DDE2EA;
+      --radius: 12px;
+      --max: 1120px;
+      --heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+      --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: var(--body);
+      font-size: 17px;
+      line-height: 1.6;
+      color: var(--navy);
+      background: var(--white);
+      font-variant-numeric: lining-nums;
+      -webkit-font-smoothing: antialiased;
+    }
+    h1, h2, h3 {
+      font-family: var(--heading);
+      font-weight: 600;
+      line-height: 1.1;
+      margin: 0 0 0.4em;
+      font-variant-numeric: lining-nums;
+      font-feature-settings: "lnum" 1;
+    }
+    h1 { font-size: clamp(40px, 7vw, 60px); }
+    h2 { font-size: clamp(32px, 5vw, 42px); }
+    h3 { font-size: 26px; }
+    p { margin: 0 0 1em; }
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+    section { padding: 88px 0; scroll-margin-top: 16px; }
+    .bg-navy { background: var(--navy); color: var(--white); }
+    .bg-pale { background: var(--pale); }
+    .lead { color: var(--text-2); max-width: 680px; }
+    .bg-navy .lead { color: var(--text-2-navy); }
+
+    .eyebrow {
+      font-family: var(--body);
+      font-weight: 500;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold-on-navy);
+      margin: 0 0 16px;
+    }
+
+    /* Placeholders still to fill in. Search the file for class="todo". */
+    .todo {
+      background: #FFF4D6;
+      color: #7A5300;
+      padding: 0 4px;
+      border-radius: 4px;
+      font-style: normal;
+    }
+    .bg-navy .todo { background: rgba(233, 180, 76, 0.18); color: var(--gold-on-navy); }
+
+    /* ---------- Buttons ---------- */
+    .btn {
+      display: inline-block;
+      font-family: var(--body);
+      font-weight: 500;
+      font-size: 16px;
+      text-decoration: none;
+      padding: 13px 28px;
+      border-radius: 999px;
+      border: 1.5px solid transparent;
+      transition: opacity 0.15s ease, background 0.15s ease;
+    }
+    .btn:hover { opacity: 0.88; }
+    .btn-gold { background: var(--gold-on-navy); color: var(--navy); }
+    .btn-outline { border-color: var(--white); color: var(--white); }
+    .btn-outline:hover { background: rgba(255, 255, 255, 0.08); opacity: 1; }
+    .btn-navy { background: var(--navy); color: var(--white); }
+    .btn:focus-visible, nav a:focus-visible { outline: 2px solid var(--gold-on-white); outline-offset: 3px; }
+
+    /* ---------- 1. Header ---------- */
+    .site-header { border-bottom: 1px solid var(--border); background: var(--white); }
+    .site-header .wrap {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 12px 32px; padding-top: 18px; padding-bottom: 18px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand svg { width: 46px; height: auto; }
+    .wordmark {
+      font-family: var(--heading);
+      font-weight: 600;
+      font-size: 24px;
+      letter-spacing: 0.32em;
+      margin-right: -0.32em;
+    }
+    nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 28px; }
+    nav a { text-decoration: none; font-weight: 500; font-size: 15px; color: var(--navy); }
+    nav a:hover { color: var(--gold-on-white); }
+
+    /* ---------- 2. Banner ---------- */
+    .banner { padding: 96px 0; }
+    .banner .wrap { display: flex; align-items: center; justify-content: space-between; gap: 56px; }
+    .banner-text { max-width: 600px; }
+    .banner-text p.intro { font-size: 19px; color: var(--text-2-navy); margin-bottom: 32px; }
+    .btn-row { display: flex; flex-wrap: wrap; gap: 14px; }
+    .emblem {
+      flex: 0 0 auto;
+      width: 300px; height: 300px;
+      border: 1.5px solid var(--gold-on-navy);
+      border-radius: 50%;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center;
+    }
+    .emblem svg { width: 120px; height: auto; margin-bottom: 10px; }
+    .emblem .wordmark { font-size: 30px; color: var(--white); margin-bottom: 14px; }
+    .emblem .rule { width: 64px; height: 1px; background: var(--gold-on-navy); margin-bottom: 14px; }
+    .emblem small {
+      display: block;
+      font-size: 12px; font-weight: 500;
+      letter-spacing: 0.22em;
+      color: var(--text-2-navy);
+      line-height: 1.9;
+    }
+
+    /* ---------- Cards ---------- */
+    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--white);
+      overflow: hidden;
+    }
+    .card-body { padding: 24px; }
+    .card-body p { color: var(--text-2); margin: 0; }
+
+    /* Photo placeholder: replace the div with <img src="images/....jpg" alt="..."> */
+    .photo {
+      aspect-ratio: 4 / 3;
+      background: var(--pale);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      padding: 16px; text-align: center;
+      font-size: 14px; color: var(--text-2);
+    }
+    .card img.photo-img { aspect-ratio: 4 / 3; width: 100%; object-fit: cover; border-bottom: 1px solid var(--border); }
+
+    /* ---------- 3. Our candles ---------- */
+    .name-price { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 8px; }
+    .name-price h3 { margin: 0; }
+    .price {
+      font-family: var(--heading);
+      font-weight: 600;
+      font-size: 28px;
+      color: var(--gold-on-white);
+      font-feature-settings: "lnum" 1;
+      white-space: nowrap;
+    }
+    .scents-title { margin-top: 64px; font-size: 32px; }
+    .scents { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 20px; }
+    .scent { background: var(--pale); border-radius: var(--radius); padding: 22px; }
+    .scent h3 { font-size: 22px; margin-bottom: 6px; }
+    .scent p { margin: 0; color: var(--text-2); font-size: 16px; }
+
+    /* ---------- 4. Christmas deals ---------- */
+    .deals { padding: 48px 0; }
+    .deals .wrap { display: flex; align-items: center; gap: 24px 56px; flex-wrap: wrap; }
+    .deals .eyebrow { margin: 0; flex: 0 0 auto; }
+    .deal-list { display: flex; flex: 1; gap: 24px 56px; flex-wrap: wrap; }
+    .deal { display: flex; align-items: baseline; gap: 20px; }
+    .deal h3 { font-size: 26px; margin: 0; color: var(--white); }
+    .deal p { margin: 0; color: var(--text-2-navy); font-size: 15px; }
+    .deal .price { color: var(--gold-on-navy); font-size: 34px; }
+
+    /* ---------- 5. Alice's story ---------- */
+    .story { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: center; }
+    .story .photo { aspect-ratio: 4 / 5; border: 1px solid var(--border); border-radius: var(--radius); background: var(--white); }
+    .story img.photo-img { aspect-ratio: 4 / 5; width: 100%; object-fit: cover; border-radius: var(--radius); }
+    .story p { color: var(--text-2); }
+    .text-link { color: var(--navy); font-weight: 500; text-decoration-color: var(--gold-on-white); text-underline-offset: 4px; }
+    .text-link:hover { color: var(--gold-on-white); }
+
+    /* ---------- 6. Find us ---------- */
+    .fair .date {
+      font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold-on-white); margin-bottom: 10px;
+    }
+    .fair h3 { margin-bottom: 8px; }
+    .card.spare { border-style: dashed; background: transparent; }
+
+    /* ---------- 7. Order and pay ---------- */
+    #order { padding-top: 0; }
+    #order .wrap { border-top: 1px solid var(--border); padding-top: 88px; }
+    .step .num {
+      width: 44px; height: 44px; border-radius: 50%;
+      background: var(--navy); color: var(--white);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--heading); font-weight: 600; font-size: 22px;
+      font-feature-settings: "lnum" 1;
+      margin-bottom: 16px;
+    }
+    .step h3 { font-size: 24px; }
+    .step p { color: var(--text-2); margin: 0; }
+    .order-cta { display: flex; align-items: center; flex-wrap: wrap; gap: 16px 28px; margin-top: 40px; }
+    .order-cta p { margin: 0; color: var(--text-2); font-size: 16px; max-width: 520px; }
+
+    /* ---------- 8. Care and safety ---------- */
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; }
+    .two-col h2 { font-size: 32px; }
+    .two-col ul { margin: 0; padding-left: 20px; color: var(--text-2); }
+    .two-col li { margin-bottom: 10px; }
+    .two-col li::marker { color: var(--gold-on-white); }
+    .two-col p { color: var(--text-2); }
+
+    /* ---------- 9. Footer ---------- */
+    .site-footer { padding: 56px 0; }
+    .site-footer .wrap { display: flex; justify-content: space-between; gap: 32px 56px; flex-wrap: wrap; }
+    .site-footer .wordmark { font-size: 26px; display: block; margin-bottom: 6px; }
+    .site-footer p { color: var(--text-2-navy); font-size: 15px; max-width: 520px; margin: 0 0 8px; }
+    .footer-links { list-style: none; margin: 0; padding: 0; }
+    .footer-links li { margin-bottom: 8px; }
+    .footer-links a { color: var(--white); text-decoration: none; font-size: 15px; }
+    .footer-links a:hover { color: var(--gold-on-navy); }
+
+    /* ---------- Phone and tablet ---------- */
+    @media (max-width: 900px) {
+      .banner .wrap { flex-direction: column; align-items: flex-start; }
+      .emblem { width: 240px; height: 240px; align-self: center; }
+      .emblem svg { width: 96px; }
+      .scents { grid-template-columns: repeat(2, 1fr); }
+      .story { grid-template-columns: 1fr; gap: 32px; }
+    }
+    @media (max-width: 760px) {
+      section { padding: 64px 0; }
+      #order .wrap { padding-top: 64px; }
+      .banner { padding: 64px 0; }
+      .grid-3, .two-col { grid-template-columns: 1fr; }
+      .two-col { gap: 40px; }
+      .deal-list { flex-direction: column; width: 100%; }
+      .deal { justify-content: space-between; width: 100%; }
+      .site-header .wrap { justify-content: center; }
+      nav ul { justify-content: center; }
+    }
+    @media (max-width: 420px) {
+      .scents { grid-template-columns: 1fr; }
+      .wordmark { font-size: 21px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. Header and menu -->
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="#top" aria-label="Cahaya, back to top">
+        <svg viewBox="0 0 120 64" fill="none" stroke="#C98A1B" stroke-width="3" stroke-linecap="round" aria-hidden="true">
+          <path d="M38 60 A22 22 0 0 1 82 60"></path>
+          <path d="M4 60 H116"></path>
+          <path d="M86 45 L98.1 38"></path>
+          <path d="M75 34 L82 21.9"></path>
+          <path d="M60 30 V16"></path>
+          <path d="M45 34 L38 21.9"></path>
+          <path d="M34 45 L21.9 38"></path>
+        </svg>
+        <span class="wordmark">CAHAYA</span>
+      </a>
+      <nav aria-label="Main">
+        <ul>
+          <li><a href="#candles">Our candles</a></li>
+          <li><a href="#story">Alice's story</a></li>
+          <li><a href="#find-us">Find us</a></li>
+          <li><a href="#order">Order and pay</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- 2. Top banner -->
+    <section class="banner bg-navy">
+      <div class="wrap">
+        <div class="banner-text">
+          <p class="eyebrow">Cahaya means light, in Malay</p>
+          <h1>Soy candles, handmade by Alice</h1>
+          <p class="intro">Every candle helps Alice raise funds towards her school expedition to Borneo in 2029.</p>
+          <div class="btn-row">
+            <a class="btn btn-gold" href="#candles">See the candles</a>
+            <a class="btn btn-outline" href="#order">How to order</a>
+          </div>
+        </div>
+        <div class="emblem" aria-hidden="true">
+          <svg viewBox="0 0 120 64" fill="none" stroke="#E9B44C" stroke-width="3" stroke-linecap="round">
+            <path d="M38 60 A22 22 0 0 1 82 60"></path>
+            <path d="M4 60 H116"></path>
+            <path d="M86 45 L98.1 38"></path>
+            <path d="M75 34 L82 21.9"></path>
+            <path d="M60 30 V16"></path>
+            <path d="M45 34 L38 21.9"></path>
+            <path d="M34 45 L21.9 38"></path>
+          </svg>
+          <span class="wordmark">CAHAYA</span>
+          <span class="rule"></span>
+          <small>LIGHT, IN MALAY</small>
+          <small>BORNEO 2029</small>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Our candles -->
+    <section id="candles">
+      <div class="wrap">
+        <h2>Our candles</h2>
+        <p class="lead">Poured by hand in small batches in North Yorkshire, using soy wax and cotton wicks. Vegan friendly and cruelty-free.</p>
+
+        <div class="grid-3">
+          <article class="card">
+            <!-- Swap for: <img class="photo-img" src="images/large-candle.jpg" alt="Large soy candle in a silver tin"> -->
+            <div class="photo"><span class="todo">[PHOTO: large tin candle]</span></div>
+            <div class="card-body">
+              <div class="name-price"><h3>Large candle</h3><span class="price">£6</span></div>
+              <p>200g of soy wax in a silver 250ml tin with a lid. Burns for about 35 hours.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <!-- Swap for: <img class="photo-img" src="images/small-candle.jpg" alt="Small soy candle in a silver tin"> -->
+            <div class="photo"><span class="todo">[PHOTO: small tin candle]</span></div>
+            <div class="card-body">
+              <!-- Price still being decided: £3.50 or £4 -->
+              <div class="name-price"><h3>Small candle</h3><span class="price">£3.50</span></div>
+              <p>80g of soy wax in a silver 100ml tin with a lid. Burns for about 15 hours.</p>
+            </div>
+          </article>
+
+          <article class="card">
+            <!-- Swap for: <img class="photo-img" src="images/glass-candle.jpg" alt="Small soy candle in a reused glass"> -->
+            <div class="photo"><span class="todo">[PHOTO: glass candle]</span></div>
+            <div class="card-body">
+              <div class="name-price"><h3>Glass candle</h3><span class="price">£2.50</span></div>
+              <p>A small soy wax candle in a reused glass. A little gift, or one to try first.</p>
+            </div>
+          </article>
+        </div>
+
+        <h3 class="scents-title">Four scents</h3>
+        <div class="scents">
+          <div class="scent"><h3>Sandalwood Vanilla</h3><p>Warm, soft and creamy.</p></div>
+          <div class="scent"><h3>Peony Petals</h3><p>A light, fresh floral.</p></div>
+          <div class="scent"><h3>Christmas Spice</h3><p>Cinnamon and festive spice.</p></div>
+          <div class="scent"><h3>Wood Sage &amp; Sea Salt</h3><p>Clean, fresh and outdoorsy.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Christmas deals -->
+    <section class="deals bg-navy" aria-label="Christmas deals">
+      <div class="wrap">
+        <p class="eyebrow">Christmas deals</p>
+        <div class="deal-list">
+          <div class="deal">
+            <div><h3>2 large candles</h3><p>Save £1</p></div>
+            <span class="price">£11</span>
+          </div>
+          <div class="deal">
+            <div><h3>Gift set</h3><p>One large and one small candle</p></div>
+            <span class="price">£9</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Alice's story -->
+    <section id="story" class="bg-pale">
+      <div class="wrap story">
+        <!-- Swap for: <img class="photo-img" src="images/pouring.jpg" alt="Hands pouring soy wax into candle tins"> -->
+        <div class="photo"><span class="todo">[PHOTO: candles being poured, hands only]</span></div>
+        <div>
+          <h2>Alice's story</h2>
+          <p>Hello, I'm Alice. I have signed up to go on a 14-day expedition to Borneo in July 2029. It is more than just a trip: it will involve trekking, supporting community projects, cultural visits and outdoor pursuits.</p>
+          <p>Over the next two years I will also take part in teamwork and leadership training, and practise hiking and other outdoor pursuits.</p>
+          <p>I have set up Cahaya to raise the money myself, selling candles and other homemade gifts. I chose candles because they bring a bit of light into dark winter evenings, and Cahaya is the Malay word for light.</p>
+          <p>I make every candle at home with help from my mum: weighing the wax, adding the scent, pouring, labelling and packing.</p>
+          <a class="text-link" href="https://outlookexpeditions.com/expeditions" target="_blank" rel="noopener">Find out more about the expedition at Outlook Expeditions →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Find us this Christmas -->
+    <section id="find-us">
+      <div class="wrap">
+        <h2>Find us this Christmas</h2>
+        <p class="lead">Come and smell the candles for yourself at these fairs around Skipton.</p>
+        <div class="grid-3">
+          <article class="card fair">
+            <div class="card-body">
+              <p class="date">Thursday 3 December</p>
+              <h3><span class="todo">[FAIR NAME, to confirm]</span></h3>
+              <p><span class="todo">[TIME]</span> · <span class="todo">[VILLAGE OR TOWN]</span></p>
+            </div>
+          </article>
+          <article class="card fair">
+            <div class="card-body">
+              <p class="date">Friday 11 December</p>
+              <h3><span class="todo">[FAIR NAME, to confirm]</span></h3>
+              <p><span class="todo">[TIME]</span> · <span class="todo">[VILLAGE OR TOWN]</span></p>
+            </div>
+          </article>
+          <article class="card fair spare">
+            <div class="card-body">
+              <p class="date"><span class="todo">[DATE]</span></p>
+              <h3><span class="todo">[NEXT FAIR]</span></h3>
+              <p>Add more as they are booked</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Order and pay -->
+    <section id="order">
+      <div class="wrap">
+        <h2>Order and pay</h2>
+        <p class="lead">Can't make it to a fair? Order by email and collect locally. We deliver by hand around Skipton and do not post candles yet.</p>
+        <div class="grid-3">
+          <div class="step">
+            <div class="num">1</div>
+            <h3>Email your order</h3>
+            <p>Tell us which candles and scents you would like, and how many.</p>
+          </div>
+          <div class="step">
+            <div class="num">2</div>
+            <h3>Pay securely by card</h3>
+            <p>We reply with the total and a secure payment link from SumUp. Bank transfer and cash are fine too.</p>
+          </div>
+          <div class="step">
+            <div class="num">3</div>
+            <h3>Collect or local delivery</h3>
+            <p>Pick up at one of our fairs, or we will drop your order round if you live near Skipton.</p>
+          </div>
+        </div>
+        <div class="order-cta">
+          <a class="btn btn-navy" href="mailto:Alice@cahaya-candles.co.uk?subject=Candle%20order">Email your order →</a>
+          <p>At our stalls we take cash, card and contactless, including Apple Pay and Google Pay.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Looking after your candle, and safety -->
+    <section class="bg-pale">
+      <div class="wrap two-col">
+        <div>
+          <h2>Looking after your candle</h2>
+          <ul>
+            <li>Trim the wick to 5mm before each burn.</li>
+            <li>Let the wax melt right to the edge of the tin the first time you light it.</li>
+            <li>Never leave a burning candle unattended, and keep it away from children, pets and draughts.</li>
+            <li>The tin gets hot. Stand it on a heatproof surface.</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Safety information</h2>
+          <p>Every candle carries a safety label on its base and the allergen and hazard wording for its scent on the back. If you have allergies or questions about a scent, email us before you buy.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- 9. Footer -->
+  <footer class="site-footer bg-navy">
+    <div class="wrap">
+      <div>
+        <span class="wordmark">CAHAYA</span>
+        <p>Skipton, North Yorkshire</p>
+        <p>Cahaya is a young person's fundraising enterprise, run by Alice with her parents. Orders and payments are handled by <span class="todo">[PARENT'S NAME]</span>.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="mailto:Alice@cahaya-candles.co.uk">Alice@cahaya-candles.co.uk</a></li>
+        <!-- Pages not written yet. Point these at returns.html and privacy.html once they exist. -->
+        <li><a href="#">Returns and refunds</a></li>
+        <li><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
