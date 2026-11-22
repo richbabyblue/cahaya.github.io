@@ -6,37 +6,41 @@
   <title>Cahaya | Soy candles, handmade by Alice</title>
   <meta name="description" content="Hand-poured soy candles made in North Yorkshire. Every candle helps Alice raise funds towards her school expedition to Borneo in 2029.">
   <meta name="theme-color" content="#1B2A4A">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 64' fill='none' stroke='%23C98A1B' stroke-width='6' stroke-linecap='round'%3E%3Cpath d='M38 60 A22 22 0 0 1 82 60'/%3E%3Cpath d='M4 60 H116'/%3E%3Cpath d='M86 45 L98.1 38'/%3E%3Cpath d='M75 34 L82 21.9'/%3E%3Cpath d='M60 30 V16'/%3E%3Cpath d='M45 34 L38 21.9'/%3E%3Cpath d='M34 45 L21.9 38'/%3E%3C/svg%3E">
+
+  <!-- Social preview (link shared in WhatsApp, Facebook etc.) -->
+  <meta property="og:title" content="Cahaya | Soy candles, handmade by Alice">
+  <meta property="og:description" content="Hand-poured soy candles from Skipton. Every candle helps Alice raise funds towards her school expedition to Borneo in 2029.">
+  <meta property="og:image" content="https://www.cahaya-candles.co.uk/assets/badge-navy.png">
+  <meta property="og:url" content="https://www.cahaya-candles.co.uk/">
+  <meta property="og:type" content="website">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/tokens.css">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 
   <style>
-    /* ---------- Brand ---------- */
+    /* ---------- Brand: short names mapped to assets/tokens.css ---------- */
     :root {
-      --navy: #1B2A4A;
-      --gold-on-navy: #E9B44C;
-      --gold-on-white: #C98A1B;
-      --white: #FFFFFF;
-      --pale: #F2F4F8;
-      --text-2: #4A5568;
-      --text-2-navy: #C9D0DE;
-      --border: #DDE2EA;
-      --radius: 12px;
-      --max: 1120px;
-      --heading: "Cormorant Garamond", Georgia, "Times New Roman", serif;
-      --body: "Jost", "Helvetica Neue", Arial, sans-serif;
+      --navy: var(--cahaya-navy);
+      --gold-on-navy: var(--cahaya-gold-on-navy);
+      --gold-on-white: var(--cahaya-gold);
+      --white: var(--cahaya-white);
+      --pale: var(--cahaya-mist);
+      --text-2: var(--cahaya-text-muted);
+      --text-2-navy: var(--cahaya-text-muted-on-navy);
+      --border: var(--cahaya-border);
+      --radius: var(--cahaya-radius-card);
+      --max: var(--cahaya-content-width);
+      --heading: var(--cahaya-font-heading);
+      --body: var(--cahaya-font-body);
     }
 
     *, *::before, *::after { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+    /* Font, size, line height and colours come from tokens.css */
     body {
-      margin: 0;
-      font-family: var(--body);
-      font-size: 17px;
-      line-height: 1.6;
-      color: var(--navy);
-      background: var(--white);
       font-variant-numeric: lining-nums;
       -webkit-font-smoothing: antialiased;
     }
@@ -65,8 +69,8 @@
     .eyebrow {
       font-family: var(--body);
       font-weight: 500;
-      font-size: 13px;
-      letter-spacing: 0.2em;
+      font-size: 14px;
+      letter-spacing: 4px;
       text-transform: uppercase;
       color: var(--gold-on-navy);
       margin: 0 0 16px;
@@ -107,18 +111,11 @@
       display: flex; align-items: center; justify-content: space-between;
       flex-wrap: wrap; gap: 12px 32px; padding-top: 18px; padding-bottom: 18px;
     }
-    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
-    .brand svg { width: 46px; height: auto; }
-    .wordmark {
-      font-family: var(--heading);
-      font-weight: 600;
-      font-size: 24px;
-      letter-spacing: 0.32em;
-      margin-right: -0.32em;
-    }
+    .brand { display: block; line-height: 0; }
+    .brand img { height: 44px; width: auto; }
     nav ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 28px; }
     nav a { text-decoration: none; font-weight: 500; font-size: 15px; color: var(--navy); }
-    nav a:hover { color: var(--gold-on-white); }
+    nav a:hover { text-decoration: underline; text-decoration-color: var(--gold-on-white); text-underline-offset: 6px; text-decoration-thickness: 2px; }
 
     /* ---------- 2. Banner ---------- */
     .banner { padding: 96px 0; }
@@ -126,23 +123,12 @@
     .banner-text { max-width: 600px; }
     .banner-text p.intro { font-size: 19px; color: var(--text-2-navy); margin-bottom: 32px; }
     .btn-row { display: flex; flex-wrap: wrap; gap: 14px; }
-    .emblem {
+    /* The badge is a navy circle; a thin gold ring makes it read on the navy banner */
+    .badge {
       flex: 0 0 auto;
       width: 300px; height: 300px;
-      border: 1.5px solid var(--gold-on-navy);
       border-radius: 50%;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center;
-    }
-    .emblem svg { width: 120px; height: auto; margin-bottom: 10px; }
-    .emblem .wordmark { font-size: 30px; color: var(--white); margin-bottom: 14px; }
-    .emblem .rule { width: 64px; height: 1px; background: var(--gold-on-navy); margin-bottom: 14px; }
-    .emblem small {
-      display: block;
-      font-size: 12px; font-weight: 500;
-      letter-spacing: 0.22em;
-      color: var(--text-2-navy);
-      line-height: 1.9;
+      border: 1.5px solid var(--gold-on-navy);
     }
 
     /* ---------- Cards ---------- */
@@ -156,7 +142,7 @@
     .card-body { padding: 24px; }
     .card-body p { color: var(--text-2); margin: 0; }
 
-    /* Photo placeholder: replace the div with <img src="images/....jpg" alt="..."> */
+    /* Photo placeholder: replace the div with <img src="assets/photos/....jpg" alt="..."> */
     .photo {
       aspect-ratio: 4 / 3;
       background: var(--pale);
@@ -174,7 +160,7 @@
       font-family: var(--heading);
       font-weight: 600;
       font-size: 28px;
-      color: var(--gold-on-white);
+      color: var(--navy);
       font-feature-settings: "lnum" 1;
       white-space: nowrap;
     }
@@ -200,12 +186,12 @@
     .story img.photo-img { aspect-ratio: 4 / 5; width: 100%; object-fit: cover; border-radius: var(--radius); }
     .story p { color: var(--text-2); }
     .text-link { color: var(--navy); font-weight: 500; text-decoration-color: var(--gold-on-white); text-underline-offset: 4px; }
-    .text-link:hover { color: var(--gold-on-white); }
+    .text-link:hover { text-decoration-thickness: 2px; }
 
     /* ---------- 6. Find us ---------- */
     .fair .date {
-      font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;
-      color: var(--gold-on-white); margin-bottom: 10px;
+      font-size: 14px; font-weight: 500; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--text-2); margin-bottom: 10px;
     }
     .fair h3 { margin-bottom: 8px; }
     .card.spare { border-style: dashed; background: transparent; }
@@ -237,7 +223,7 @@
     /* ---------- 9. Footer ---------- */
     .site-footer { padding: 56px 0; }
     .site-footer .wrap { display: flex; justify-content: space-between; gap: 32px 56px; flex-wrap: wrap; }
-    .site-footer .wordmark { font-size: 26px; display: block; margin-bottom: 6px; }
+    .footer-mark { display: block; height: 40px; width: auto; margin-bottom: 12px; }
     .site-footer p { color: var(--text-2-navy); font-size: 15px; max-width: 520px; margin: 0 0 8px; }
     .footer-links { list-style: none; margin: 0; padding: 0; }
     .footer-links li { margin-bottom: 8px; }
@@ -247,8 +233,7 @@
     /* ---------- Phone and tablet ---------- */
     @media (max-width: 900px) {
       .banner .wrap { flex-direction: column; align-items: flex-start; }
-      .emblem { width: 240px; height: 240px; align-self: center; }
-      .emblem svg { width: 96px; }
+      .badge { width: 240px; height: 240px; align-self: center; }
       .scents { grid-template-columns: repeat(2, 1fr); }
       .story { grid-template-columns: 1fr; gap: 32px; }
     }
@@ -265,7 +250,7 @@
     }
     @media (max-width: 420px) {
       .scents { grid-template-columns: 1fr; }
-      .wordmark { font-size: 21px; }
+      .brand img { height: 38px; }
     }
   </style>
 </head>
@@ -274,17 +259,8 @@
   <!-- 1. Header and menu -->
   <header class="site-header">
     <div class="wrap">
-      <a class="brand" href="#top" aria-label="Cahaya, back to top">
-        <svg viewBox="0 0 120 64" fill="none" stroke="#C98A1B" stroke-width="3" stroke-linecap="round" aria-hidden="true">
-          <path d="M38 60 A22 22 0 0 1 82 60"></path>
-          <path d="M4 60 H116"></path>
-          <path d="M86 45 L98.1 38"></path>
-          <path d="M75 34 L82 21.9"></path>
-          <path d="M60 30 V16"></path>
-          <path d="M45 34 L38 21.9"></path>
-          <path d="M34 45 L21.9 38"></path>
-        </svg>
-        <span class="wordmark">CAHAYA</span>
+      <a class="brand" href="#top">
+        <img src="assets/wordmark-navy.png" alt="CAHAYA" width="238" height="44">
       </a>
       <nav aria-label="Main">
         <ul>
@@ -311,21 +287,7 @@
             <a class="btn btn-outline" href="#order">How to order</a>
           </div>
         </div>
-        <div class="emblem" aria-hidden="true">
-          <svg viewBox="0 0 120 64" fill="none" stroke="#E9B44C" stroke-width="3" stroke-linecap="round">
-            <path d="M38 60 A22 22 0 0 1 82 60"></path>
-            <path d="M4 60 H116"></path>
-            <path d="M86 45 L98.1 38"></path>
-            <path d="M75 34 L82 21.9"></path>
-            <path d="M60 30 V16"></path>
-            <path d="M45 34 L38 21.9"></path>
-            <path d="M34 45 L21.9 38"></path>
-          </svg>
-          <span class="wordmark">CAHAYA</span>
-          <span class="rule"></span>
-          <small>LIGHT, IN MALAY</small>
-          <small>BORNEO 2029</small>
-        </div>
+        <img class="badge" src="assets/badge-navy.png" alt="Cahaya badge: light, in Malay. Borneo 2029." width="300" height="300">
       </div>
     </section>
 
@@ -337,7 +299,7 @@
 
         <div class="grid-3">
           <article class="card">
-            <!-- Swap for: <img class="photo-img" src="images/large-candle.jpg" alt="Large soy candle in a silver tin"> -->
+            <!-- Swap for: <img class="photo-img" src="assets/photos/large-candle.jpg" alt="Large soy candle in a silver tin"> -->
             <div class="photo"><span class="todo">[PHOTO: large tin candle]</span></div>
             <div class="card-body">
               <div class="name-price"><h3>Large candle</h3><span class="price">£6</span></div>
@@ -346,7 +308,7 @@
           </article>
 
           <article class="card">
-            <!-- Swap for: <img class="photo-img" src="images/small-candle.jpg" alt="Small soy candle in a silver tin"> -->
+            <!-- Swap for: <img class="photo-img" src="assets/photos/small-candle.jpg" alt="Small soy candle in a silver tin"> -->
             <div class="photo"><span class="todo">[PHOTO: small tin candle]</span></div>
             <div class="card-body">
               <!-- Price still being decided: £3.50 or £4 -->
@@ -356,7 +318,7 @@
           </article>
 
           <article class="card">
-            <!-- Swap for: <img class="photo-img" src="images/glass-candle.jpg" alt="Small soy candle in a reused glass"> -->
+            <!-- Swap for: <img class="photo-img" src="assets/photos/glass-candle.jpg" alt="Small soy candle in a reused glass"> -->
             <div class="photo"><span class="todo">[PHOTO: glass candle]</span></div>
             <div class="card-body">
               <div class="name-price"><h3>Glass candle</h3><span class="price">£2.50</span></div>
@@ -395,7 +357,7 @@
     <!-- 5. Alice's story -->
     <section id="story" class="bg-pale">
       <div class="wrap story">
-        <!-- Swap for: <img class="photo-img" src="images/pouring.jpg" alt="Hands pouring soy wax into candle tins"> -->
+        <!-- Swap for: <img class="photo-img" src="assets/photos/pouring.jpg" alt="Hands pouring soy wax into candle tins"> -->
         <div class="photo"><span class="todo">[PHOTO: candles being poured, hands only]</span></div>
         <div>
           <h2>Alice's story</h2>
@@ -493,7 +455,7 @@
   <footer class="site-footer bg-navy">
     <div class="wrap">
       <div>
-        <span class="wordmark">CAHAYA</span>
+        <img class="footer-mark" src="assets/wordmark-white.png" alt="CAHAYA" width="216" height="40">
         <p>Skipton, North Yorkshire</p>
         <p>Cahaya is a young person's fundraising enterprise, run by Alice with her parents. Orders and payments are handled by <span class="todo">[PARENT'S NAME]</span>.</p>
       </div>

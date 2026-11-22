@@ -1,0 +1,69 @@
+/* Cahaya brand tokens. Load the fonts in <head>:
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Jost:wght@400;500&display=swap" rel="stylesheet">
+*/
+:root {
+  --cahaya-navy: #1B2A4A;
+  --cahaya-gold: #C98A1B;          /* gold on white: logo and thin rules only */
+  --cahaya-gold-on-navy: #E9B44C;  /* gold on navy: accents, prices, buttons */
+  --cahaya-white: #FFFFFF;
+  --cahaya-mist: #F2F4F8;          /* alternate section background */
+  --cahaya-text: #1B2A4A;
+  --cahaya-text-muted: #4A5568;    /* secondary text on white */
+  --cahaya-text-on-navy: #FFFFFF;
+  --cahaya-text-muted-on-navy: #C9D0DE;
+  --cahaya-border: #DDE2EA;
+
+  --cahaya-font-heading: "Cormorant Garamond", Georgia, serif;
+  --cahaya-font-body: "Jost", system-ui, sans-serif;
+
+  --cahaya-radius-card: 12px;
+  --cahaya-radius-pill: 999px;
+  --cahaya-content-width: 1120px;
+}
+
+body {
+  margin: 0;
+  font-family: var(--cahaya-font-body);
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--cahaya-text);
+  background: var(--cahaya-white);
+}
+
+h1, h2, h3, .cahaya-price {
+  font-family: var(--cahaya-font-heading);
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: lining-nums;
+}
+
+.cahaya-wordmark {
+  font-family: var(--cahaya-font-heading);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.cahaya-eyebrow {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.cahaya-button {
+  display: inline-block;
+  padding: 14px 26px;
+  border-radius: var(--cahaya-radius-pill);
+  background: var(--cahaya-navy);
+  color: var(--cahaya-white);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.cahaya-button--gold {
+  background: var(--cahaya-gold-on-navy);
+  color: var(--cahaya-navy);
+}
